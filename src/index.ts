@@ -12,6 +12,11 @@ const app: Express = express();
 
 swaggerSetup(app);
 
+app.get('/', (rep: express.Request, res: express.Response)=>{
+    res.status(200).json({
+      Greetings: `Welcome to My Brand Backend! It's a pleasure to have you here.`
+    })
+  })
 app.use(express.json());
 app.use(cors());
 app.use("/api", routes);
